@@ -12,9 +12,9 @@ import com.annoying.dictionary.models.Example;
 
 public class ExampleMapper implements RowMapper<Example> {
 
-	@Override
-	public Example mapRow(ResultSet rs, int rowNum) throws SQLException {
-		return new Example(rs.getLong(EXAMPLE_ID), rs.getString(EXAMPLE_SIGNATURE));
-	}
+  @Override
+  public Example mapRow(ResultSet rs, int rowNum) throws SQLException {
+    return new Example(rs.getLong(EXAMPLE_ID), rs.getString(EXAMPLE_SIGNATURE));
+  }
 
 }

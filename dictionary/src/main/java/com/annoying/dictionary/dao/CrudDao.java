@@ -7,11 +7,11 @@ import com.annoying.dictionary.models.Entity;
 
 public interface CrudDao<T extends Entity<K>, K> {
 
-	Optional<T> findById(K id);
+  Optional<T> findById(K id);
 
-	List<T> findAll();
+  List<T> findAll();
 
-	T save(T entity);
+  T save(T entity);
 
-	void deleteById(K id);
+  void deleteById(K id);
 }

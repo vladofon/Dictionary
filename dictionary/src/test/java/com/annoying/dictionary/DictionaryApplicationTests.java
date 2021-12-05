@@ -13,22 +13,23 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @SpringBootTest
 class DictionaryApplicationTests {
 
-	@Autowired
-	JdbcTemplate jdbcTemplate;
+  @Autowired
+  JdbcTemplate jdbcTemplate;
 
-	@Test
-	void contextLoads() {
-		assertThat(jdbcTemplate).isNotNull();
-	}
+  @Test
+  void contextLoads() {
+    assertThat(jdbcTemplate).isNotNull();
+  }
 
-	@Test
-	void migrationTest() {
-		List<String> tables = jdbcTemplate
-				.queryForList("SELECT table_name FROM information_schema.tables WHERE table_schema='dictionary'", String.class);
+  @Test
+  void migrationTest() {
+    List<String> tables = jdbcTemplate.queryForList(
+        "SELECT table_name FROM information_schema.tables WHERE table_schema='dictionary'",
+        String.class);
 
-		System.out.println(tables.toString());
-		assertThat(tables)
-				.containsAll(Arrays.asList("words", "examples", "use_cases", "synonyms", "flyway_schema_history"));
-	}
+    System.out.println(tables.toString());
+    assertThat(tables).containsAll(
+        Arrays.asList("words", "examples", "use_cases", "synonyms", "flyway_schema_history"));
+  }
 
 }

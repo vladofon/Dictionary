@@ -14,10 +14,10 @@ import com.annoying.dictionary.models.Word;
 
 public class WordMapper implements RowMapper<Word> {
 
-	@Override
-	public Word mapRow(ResultSet rs, int rowNum) throws SQLException {
-		return new Word(rs.getLong(WORD_ID), rs.getString(WORD_SIGNATURE), rs.getString(WORD_TRANSLATION),
-				rs.getString(WORD_TRANSCRIPTION));
-	}
+  @Override
+  public Word mapRow(ResultSet rs, int rowNum) throws SQLException {
+    return new Word(rs.getLong(WORD_ID), rs.getString(WORD_SIGNATURE),
+        rs.getString(WORD_TRANSLATION), rs.getString(WORD_TRANSCRIPTION));
+  }
 
 }
