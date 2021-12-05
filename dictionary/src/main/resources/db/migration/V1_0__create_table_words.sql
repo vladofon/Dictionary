@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS dictionary.words
+(
+	word_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+	signature VARCHAR(250) NOT NULL COLLATE pg_catalog."default" NOT NULL,
+	translation VARCHAR(250) NOT NULL COLLATE pg_catalog."default" NOT NULL,
+	transcription VARCHAR(250) NOT NULL COLLATE pg_catalog."default" NOT NULL,
+	CONSTRAINT word_pkey PRIMARY KEY (word_id)
+);
